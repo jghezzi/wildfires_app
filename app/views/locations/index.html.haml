@@ -1,0 +1,29 @@
+%h1 Locations
+
+- @locations.each do |l|
+	State:
+	= l.state
+	%br
+	County:
+	= l.county
+	%br
+	Agency:
+	= l.agency
+	%br
+	
+	- l.wildfires.each do |n|
+		Wildfire Category:
+		= n.category
+		%br
+		Wildfire Status:
+		= n.status
+
+	%br
+	%br
+
+=link_to "Add a location", "locations/new"
+
+= form_tag(search_locations_path, method: "get") do
+	= label_tag(:q, "Find a state:")
+	= text_field_tag(:search, params[:search])
+	= submit_tag "Search"

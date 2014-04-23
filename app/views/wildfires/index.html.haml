@@ -1,0 +1,16 @@
+%h1 Wildfires
+
+- @wildfires.each do |w|
+	Category:
+	= w.category
+	%br
+	Status:
+	= w.status
+	%br
+	Location ID:
+	= w.location_id
+	%br
+	%br
+
+=link_to "Add a wildfire", "/wildfires/new"
+
