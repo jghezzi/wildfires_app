@@ -2,15 +2,23 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :wildfires
+  #get 'wildfires/active_fires' => 'wildfires#active_fires'
+
+  resources :wildfires do
+    member do
+      get :download_fire_pic
+    end
+    collection do
+      get :active_fires
+    end
+  end
 
   resources :locations do
     collection do
       get 'search'
     end
-    resources :wildfires
+    #resources :wildfires
   end
-
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

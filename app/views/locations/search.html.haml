@@ -1,22 +1,23 @@
 %h1 Locations - Search Results
 %ul
-	- @search_results.each do |s|
-		State:
-		= s.state
-		%br
-		County:
-		= s.county
-		%br
-		Agency:
-		= s.agency
-		%br
-		%ul
+- @search_results.each do |s|
+	State:
+	= s.state
+	%br
+	County:
+	= s.county
+	%br
+	Agency:
+	= s.agency
+	%br
+	%ul
 
-		- s.wildfires.each do |wf|
-			%br
-			Wildfire Category:
-			= wf.category
-			%br
-			Wildfire Status:
-			= wf.status
-			%br
+	- s.wildfires.each do |wf|
+		%br
+		Wildfire Category:
+		= wf.category
+		%br
+		Wildfire Status:
+		= wf.status
+		%br
+		%br

@@ -1,1 +1,6 @@
-show.html.haml
+.container
+	= @wildfire.category
+%br
+
+=link_to "Fire Pic", download_fire_pic_wildfire_path
+= image_tag @wildfire.fire_pic.url

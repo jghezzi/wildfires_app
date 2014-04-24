@@ -18,14 +18,11 @@ class LocationsController < ApplicationController
 	end
 
 	def search
-		@search_results = Location.search(params[:search])
+		@search_results = Location.search(params[:search_state], params[:search_county])
 	end
 
 	private
 		def location_params
 			params.require(:location).permit!
 		end
-
-
-
 end
