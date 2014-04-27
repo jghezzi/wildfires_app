@@ -21,6 +21,11 @@ class LocationsController < ApplicationController
 		@search_results = Location.search(params[:search_state], params[:search_county])
 	end
 
+
+	def edit
+		@assignee = Assignee.find(params[:id])
+	end
+
 	private
 		def location_params
 			params.require(:location).permit!

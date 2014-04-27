@@ -1,6 +1,10 @@
-.container
-	= @wildfire.category
+.jumbotron
+	%h1 Wildfires	
+	<a class="btn btn-primary" href="/" role="button">Wildfires home »</a>
+	<a class="btn btn-primary" href="/wildfires/new" role="button">Add a wildfire »</a>
+	<a class="btn btn-xl btn-danger" href="/wildfires/#{@wildfire.id}/download_fire_pic" role="button">Download Fire Pic »</a>
 %br
 
-=link_to "Fire Pic", download_fire_pic_wildfire_path
+
+.container
 = image_tag @wildfire.fire_pic.url

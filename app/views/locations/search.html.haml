@@ -1,4 +1,10 @@
-%h1 Locations - Search Results
+.jumbotron
+	%h1 Locations
+	<a class="btn btn-primary" href="/" role="button">Wildfires home »</a>
+	<a class="btn btn-primary" href="/locations" role="button">Back to locations »</a>
+
+<div class="container">
+<div class="col-lg-2">
 %ul
 - @search_results.each do |s|
 	State:
@@ -9,11 +15,9 @@
 	%br
 	Agency:
 	= s.agency
-	%br
 	%ul
 
 	- s.wildfires.each do |wf|
-		%br
 		Wildfire Category:
 		= wf.category
 		%br
@@ -21,3 +25,4 @@
 		= wf.status
 		%br
 		%br
+</

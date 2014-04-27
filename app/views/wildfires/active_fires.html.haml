@@ -1,6 +1,12 @@
-%h1 Wildfires
+.jumbotron
+	%h1 Wildfires	
+	<a class="btn btn-primary" href="/" role="button">Wildfires home »</a>
+	<a class="btn btn-primary" href="/wildfires/new" role="button">Add a wildfire »</a>
 
+<div class="container">
+%h3 Active Fires
 - @wildfires.each do |w|
+	<div class="col-lg-2">
 	Category:
 	= w.category
 	%br
@@ -11,5 +17,7 @@
 	= w.location_id
 	%br
 	%br
+	</div>
+</div>
 
 

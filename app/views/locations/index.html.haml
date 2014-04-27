@@ -1,6 +1,12 @@
-%h1 Locations
+.jumbotron
+	%h1 Locations	
+	<a class="btn btn-primary" href="/" role="button">Wildfires home »</a>
+	<a class="btn btn-primary" href="/locations/new" role="button">Add a location »</a>
+
+<div class="container">
 
 - @locations.each do |l|
+	<div class="col-lg-2">
 	<b> State:
 	= l.state
 	%br
@@ -10,20 +16,13 @@
 	Agency:
 	= l.agency
 	%br
-	= " ---------- "	
-	- l.wildfires.each do |n|
-		%br </b>
-		Wildfire Category:
-		= n.category
-		%br
-		Wildfire Status:
-		= n.status
-		%br
 
 	%br
 	%br
+	</div>
+</div>
 
-=link_to "Add a location", "locations/new"
+<div class="container">
 
 = form_tag(search_locations_path, method: "get") do
 	= label_tag("Find a state / county:")
@@ -31,5 +30,4 @@
 	= select_tag :search_county, options_for_select(Location.uniq.pluck(:county))
 	= submit_tag "Search"
 
-
-
+</div>

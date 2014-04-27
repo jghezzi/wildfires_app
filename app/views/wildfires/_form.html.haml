@@ -1,3 +1,10 @@
+.jumbotron
+	%h1 Wildfires	
+	<a class="btn btn-primary" href="/" role="button">Wildfires home »</a>
+	<a class="btn btn-primary" href="/wildfires/new" role="button">Add a wildfire »</a>
+
+<div class="page-header">
+
 = f.label :category
 = f.text_field :category
 
@@ -9,4 +16,9 @@
 
 = f.submit "Add Wildfire"
 
+%br
+%br
+
 = f.file_field :fire_pic
+
+</div>
